@@ -24,6 +24,8 @@ Json.clear();
 System.out.println("After clearing: " + Json.response()); // Output: {}
 
 ```
+<br>
+
 ## Java Spring-Boot Controller Exemple :
 1. Ensure to create a `libs` folder and place the `Json.java` file inside it.
 2. To import both classes and the library in your Java file, use the following import statements at the top of your Java class:
@@ -34,6 +36,8 @@ import java.util.Map;
 ```
 
 These imports allow you to use the `Json` class from the `libs` package and the `Map` interface from `java.util`.
+<br><br><br>
+<b>Code : <b>
 ```java
 package com.example.demo.controllers;
 
@@ -61,4 +65,14 @@ public class DevController {
     }
 }
 
+```
+<br>
+<b>Output Exemple : <b>
+
+```Json
+{
+    "id":1, 
+    "name":"Hf wassim", 
+    "city":"Tunisia"
+}
 ```
