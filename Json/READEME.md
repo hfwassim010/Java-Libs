@@ -47,10 +47,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/developer")
-public class StudentController {
+public class DevController {
 
     @GetMapping("/info")
-    public Map<String, Object> getStudentInfo() {
+    public Map<String, Object> getDevInfo() {
         // Set key-value pairs for the JSON object
         Json.set("id", 1);
         Json.set("name", "Hf wassim");
