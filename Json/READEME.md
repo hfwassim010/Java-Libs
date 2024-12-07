@@ -7,8 +7,8 @@ This guide demonstrates how to use the `Json` class to create and manipulate a s
 ```java
 // Set key-value pairs in the JSON object
 Json.set("id", 1);
-Json.set("name", "John Doe");
-Json.set("city", "New York");
+Json.set("name", "Hf wassim");
+Json.set("city", "Tunisia");
 
 // Retrieve values by key
 System.out.println("ID: " + Json.get("id"));
@@ -22,3 +22,43 @@ System.out.println("JSON Response: " + jsonResponse);
 // Clear the JSON object
 Json.clear();
 System.out.println("After clearing: " + Json.response()); // Output: {}
+
+```
+## Java Spring-Boot Controller Exemple :
+1. Ensure to create a `libs` folder and place the `Json.java` file inside it.
+2. To import both classes and the library in your Java file, use the following import statements at the top of your Java class:
+
+```java
+import com.example.demo.libs.Json;
+import java.util.Map;
+```
+
+These imports allow you to use the `Json` class from the `libs` package and the `Map` interface from `java.util`.
+```java
+package com.example.demo.controllers;
+
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.libs.Json;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/developer")
+public class StudentController {
+
+    @GetMapping("/info")
+    public Map<String, Object> getStudentInfo() {
+        // Set key-value pairs for the JSON object
+        Json.set("id", 1);
+        Json.set("name", "Hf wassim");
+        Json.set("city", "Tunisia");
+
+        // Return the JSON object as a Map
+        return Json.response();
+    }
+}
+
+```
